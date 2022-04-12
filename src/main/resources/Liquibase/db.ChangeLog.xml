@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+
+    <changeSet id="1" author="Roman_Yaskevich">
+        <comment>create table car</comment>
+        <sql>
+            create table car
+            (
+                id    INT not null,
+                name  char(200),
+                color char(200),
+                price char(200),
+                constraint car_id_pk
+                    primary key (id)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="Roman_Yaskevich">
+        <comment>insert table car</comment>
+        <sql>
+            insert
+            car(id,name,color,price)
+values (1,'Porsche','Red','100000$'),
+(2,'BMW','Grey','90000$'),
+(3,'Geely','Orange','30000$');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
+
+
